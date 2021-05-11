@@ -1,0 +1,127 @@
+<!-- header nav placeholder -->
+<div class="header_nav_placeholder"></div>
+
+<!-- header nav -->
+<nav class="header_nav_position header_nav_stickyFixed">
+    <div class="header_container">
+        <!-- header nav left -->
+        <div class="header_nav_left">
+            <a href="/" class="header_nav_logo"></a>
+            <div class="header_nav_menu">
+                <a class="header_nav_menu_item header_nav_menu_item_active" href="/">
+                    首页
+                </a>
+                <div class="header_nav_menu_item">
+                    精华
+                    <i></i>
+                    <div class="header_nav_talking" style="display: none;">访谈中</div>
+                    <div class="header_nav_dropdown_container">
+                        <i></i>
+                        <div class="header_nav_dropdown">
+                            <a href="javascript:void(0);">今日话题</a>
+                            <a href="javascript:void(0);" style="position:relative">雪球访谈</a>
+                            <a href="javascript:void(0);">找人</a>
+                        </div>
+                    </div>
+                </div>
+                <a class="header_nav_menu_item">
+                    问答
+                </a>
+                <div class="header_nav_menu_item">
+                    行情
+                    <i></i>
+                    <div class="header_nav_dropdown_container">
+                        <i></i>
+                        <div class="header_nav_dropdown">
+                            <a href="javascript:void(0);">行情中心</a>
+                            <a href="javascript:void(0);">筛选器</a>
+                            <a href="javascript:void(0);">新股上市</a>
+                            <a href="javascript:void(0);">买什么</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header_nav_menu_item">
+                    交易
+                    <i></i>
+                    <div class="header_nav_dropdown_container">
+                        <i></i>
+                        <div class="header_nav_dropdown">
+                            <a href="javascript:void(0);">A股交易</a>
+                            <a href="javascript:void(0);">港美股交易</a>
+                            <a href="javascript:void(0);">蛋卷基金</a>
+                            <a href="javascript:void(0);">私募中心</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form action="" class="header_nav_search">
+                <input type="text" autocomplete="off" placeholder="搜索" name="q">
+                <span class="header_nav_search_addon">
+                    <button type="button">
+                        <i class="iconfont_iconfont"></i>
+                    </button>
+                </span>
+                <div class="header_nav_search_result_container">
+                    <div class="header_nav_search_result">
+                        <div>
+                            <a href="javascript:void(0);" class="header_nav_search_result_list_hd">
+                                股票
+                                <div class="header_more">
+                                    <i class="iconfont_iconfont"></i>
+                                </div>
+                            </a>
+                            <div>
+                                <a href="javascript:void(0);" class="header_nav_search_result_list_item">
+                                    <span>
+                                        <span>中国平安(SH601318)</span>
+                                    </span>
+                                </a>
+                                <a href="javascript:void(0);" class="header_nav_search_result_list_item">
+                                    <span>
+                                        <span>中信证券(SH600030)</span>
+                                    </span>
+                                </a>
+                                <a href="javascript:void(0);" class="header_nav_search_result_list_item">
+                                    <span>
+                                        <span>三一重工(SH600031)</span>
+                                    </span>
+                                </a>
+                                <a href="javascript:void(0);" class="header_nav_search_result_list_item">
+                                    <span>
+                                        <span>中国银行(SH601988)</span>
+                                    </span>
+                                </a>
+                                <a href="javascript:void(0);" class="header_nav_search_result_list_item">
+                                    <span>
+                                        <span>中国建筑(SH601668)</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- header nav right -->
+        <div class="header_nav_right">
+            <div class="header_nav_login">
+                <a href="javascript:void(0);" class="home_pc_btn_download">
+                    下载App
+                    <div class="header_pc_hd_qrcode_dropdown" data-type="pcicon">
+                        <svg class="header_triangle" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                            <path class="header_arrow_16v" d="M5 0 L 0 4 L 10 4"></path>
+                        </svg>
+                        <span>扫一扫，下载</span>
+                        <div class="header_qrcode"></div>
+                    </div>
+                </a>
+                <div class="header_nav_login__btn" (click)="showLogin()">
+                    <i class="iconfont_iconfont header_icon_user"></i>
+                    <span>登录/注册</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div hidden></div>
+</nav>

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>雪球 - 聪明的投资者都在这里</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="force-rendering" content="webkit">
+    <meta name="keywords" content="股票,炒股,股票资讯,行情,财经,证券,投资,金融,港股,美股,基金,债券,期货,外汇,科创板,保险,雪球财经,雪球,雪球股票,投资社区,雪球投资">
+    <meta name="description" content="雪球，聪明的投资者都在这里 - 3500万投资者都在用的投资社区，沪深港美全球市场实时行情，股票基金债券免费资讯，与投资高手实战交流。">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+    <link href="./images/favicon.png" rel="icon" type="image/png">
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+    <div id="app">
+        <!-- header nav placeholder -->
+        <div class="header_nav_placeholder"></div>
+
+        <!-- header nav -->
+        <nav class="header_nav_position header_nav_stickyFixed">
+            <div class="header_container">
+                <!-- header nav left -->
+                <div class="header_nav_left">
+                    <a href="/" class="header_nav_logo"></a>
+                    <div class="header_nav_menu">
+                        <a class="header_nav_menu_item header_nav_menu_item_active" href="/">
+                        首页
+                        </a>
+                        <div class="header_nav_menu_item">
+                            精华
+                            <i></i>
+                            <div class="header_nav_talking" style="display: none;">访谈中</div>
+                            <div class="header_nav_dropdown_container">
+                                <i></i>
+                                <div class="header_nav_dropdown">
+                                    <a href="/today">今日话题</a>
+                                    <a href="/talks/all" style="position:relative">雪球访谈</a>
+                                    <a href="/people">找人</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="header_nav_menu_item">
+                            问答
+                        </a>
+                        <div class="header_nav_menu_item">
+                            行情
+                            <i></i>
+                            <div class="header_nav_dropdown_container">
+                                <i></i>
+                                <div class="header_nav_dropdown">
+                                    <a href="#">行情中心</a>
+                                    <a href="#">筛选器</a>
+                                    <a href="#">新股上市</a>
+                                    <a href="#">买什么</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="header_nav_menu_item">
+                            交易
+                            <i></i>
+                            <div class="header_nav_dropdown_container">
+                                <i></i>
+                                <div class="header_nav_dropdown">
+                                    <a href="#">A股交易</a>
+                                    <a href="#">港美股交易</a>
+                                    <a href="#">蛋卷基金</a>
+                                    <a href="#">私募中心</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <form action="" class="header_nav_search">
+                        <input type="text" autocomplete="off" placeholder="搜索" name="q">
+                        <span class="header_nav_search_addon">
+                            <button type="button">
+                                <i class="iconfont_iconfont"></i>
+                            </button>
+                        </span>
+                        <div class="header_nav_search_result_container">
+                            <div class="header_nav_search_result">
+                                <div>
+                                    <a href="#" class="header_nav_search_result_list_hd">
+                                        股票
+                                        <div class="header_more">
+                                            <i class="iconfont_iconfont"></i>
+                                        </div>
+                                    </a>
+                                    <div>
+                                        <a href="#" class="header_nav_search_result_list_item">
+                                            <span>
+                                                <span>中国平安(SH601318)</span>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="header_nav_search_result_list_item">
+                                            <span>
+                                                <span>中信证券(SH600030)</span>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="header_nav_search_result_list_item">
+                                            <span>
+                                                <span>三一重工(SH600031)</span>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="header_nav_search_result_list_item">
+                                            <span>
+                                                <span>中国银行(SH601988)</span>
+                                            </span>
+                                        </a>
+                                        <a href="#" class="header_nav_search_result_list_item">
+                                            <span>
+                                                <span>中国建筑(SH601668)</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- header nav right -->
+                <div class="header_nav_right">
+                    <div class="header_nav_login">
+                        <a href="#" class="home_pc_btn_download">
+                            下载App
+                            <div class="header_pc_hd_qrcode_dropdown" data-type="pcicon">
+                                <svg class="header_triangle" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="header_arrow_16v" d="M5 0 L 0 4 L 10 4"></path>
+                                </svg>
+                                <span>扫一扫，下载</span>
+                                <div class="header_qrcode"></div>
+                            </div>
+                        </a>
+                        <div class="header_nav_login__btn">
+                            <i class="iconfont_iconfont header_icon_user"></i>
+                            <span>登录/注册</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div hidden></div>
+        </nav>
+
+        <!-- banner -->
+        <div class="home_banner" data-type="pc2">
+            <div class="home_banner_container">
+                <div class="home_banner_hd_pc">
+                    <a href="#" class="home_pc__btn_login home_banner_hd_btn"></a>
+                    <a href="#" class="home_pc_btn_download "></a>
+                </div>
+                <div class="home_banner_btns_rw"></div>
+            </div>
+        </div>
+
+        <!-- main container -->
+        <div class="main_container">
+            <div class="home_main_left">
+                <div class="stock_slider_container stock_slider_container_plus">
+                    <div class="stock_slider_box">
+                        <span class="stock_slider_prev"></span>
+                        <span class="stock_slider_next"></span>
+                        <a href="#" class="stock_slider_item">
+                            <div class="stocker_slider_item_type">
+                                <h5>上证指数</h5>
+                            </div>
+                            <div class="stock_slider_item_info">
+                                <div class="stock_slider_item_current stock_slider_slip">3446.86</div>
+                                <div class="stock_slider_item_growth stock_slider_slip">-28.04(-0.81%)</div>
+                            </div>
+                            <div class="stock_slider_chart stock_slider_slip">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="width: 80px; height: 32.8px;">
+                                    <path class="stock_slider_last_close" d="M0 20 L80 20"></path>
+                                    <path class="stock_slider_polyline"
+                                        d="M0 22 L0 23 L0 23 L0 25 L1 24 L1 24 L1 23 L2 24 L2 23 L2 23 L3 25 L3 25 L3 25 L4 26 L4 26 L4 27 L5 26 L5 26 L5 26 L6 26 L6 26 L6 27 L7 26 L7 27 L7 27 L8 26 L8 25 L8 25 L9 25 L9 25 L9 26 L10 26 L10 25 L10 26 L11 26 L11 25 L11 26 L12 26 L12 27 L12 27 L13 27 L13 27 L13 27 L14 27 L14 27 L14 27 L15 27 L15 27 L15 28 L16 28 L16 27 L16 28 L17 27 L17 27 L17 27 L18 28 L18 28 L18 28 L19 28 L19 28 L19 28 L20 29 L20 29 L20 28 L21 28 L21 28 L21 28 L22 28 L22 28 L22 27 L23 27 L23 27 L23 26 L24 27 L24 27 L24 27 L25 28 L25 28 L25 28 L26 28 L26 27 L26 28 L27 28 L27 28 L27 28 L28 28 L28 28 L28 28 L29 28 L29 28 L29 27 L30 27 L30 27 L30 27 L31 26 L31 26 L31 26 L32 25 L32 25 L32 25 L33 24 L33 25 L33 25 L34 25 L34 25 L34 25 L35 24 L35 24 L35 23 L36 23 L36 24 L36 25 L37 25 L37 25 L37 25 L38 26 L38 26 L38 25 L39 26 L39 26 L39 26 L40 26 L40 26 L40 26 L40 26 L41 26 L41 27 L41 27 L42 28 L42 28 L42 28 L43 29 L43 30 L43 30 L44 30 L44 31 L44 32 L45 32 L45 32 L45 32 L46 33 L46 34 L46 33 L47 32 L47 33 L47 33 L48 33 L48 33 L48 33 L49 34 L49 34 L49 35 L50 35 L50 36 L50 35 L51 34 L51 35 L51 35 L52 35 L52 34 L52 34 L53 34 L53 34 L53 34 L54 34 L54 34 L54 35 L55 35 L55 35 L55 35 L56 34 L56 34 L56 33 L57 33 L57 32 L57 32 L58 32 L58 32 L58 32 L59 32 L59 32 L59 31 L60 31 L60 31 L60 31 L61 31 L61 31 L61 31 L62 32 L62 32 L62 32 L63 32 L63 32 L63 32 L64 31 L64 31 L64 31 L65 31 L65 31 L65 31 L66 30 L66 30 L66 31 L67 31 L67 31 L67 30 L68 30 L68 30 L68 29 L69 30 L69 30 L69 30 L70 31 L70 31 L70 30 L71 30 L71 30 L71 30 L72 31 L72 31 L72 30 L73 30 L73 30 L73 29 L74 30 L74 29 L74 29 L75 29 L75 29 L75 29 L76 29 L76 30 L76 30 L77 30 L77 30 L77 30 L78 30 L78 29 L78 30 L79 30 L79 30 L79 29">
+                                    </path>0
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="stock_slider_item">
+                            <div class="stocker_slider_item_type">
+                                <h5>深证成指</h5>
+                            </div>
+                            <div class="stock_slider_item_info">
+                                <div class="stock_slider_item_current stock_slider_slip">14438.57</div>
+                                <div class="stock_slider_item_growth stock_slider_slip">-25.51(-0.18%)</div>
+                            </div>
+                            <div class="stock_slider_chart stock_slider_slip">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="width: 80px; height: 32.8px;">
+                                    <path class="stock_slider_last_close" d="M0 20 L80 20"></path>
+                                    <path class="stock_slider_polyline"
+                                        d="M0 23 L0 26 L0 24 L0 26 L1 23 L1 25 L1 22 L2 23 L2 22 L2 21 L3 25 L3 25 L3 27 L4 28 L4 29 L4 28 L5 25 L5 25 L5 25 L6 25 L6 25 L6 26 L7 24 L7 24 L7 24 L8 23 L8 20 L8 20 L9 21 L9 19 L9 21 L10 21 L10 21 L10 20 L11 20 L11 19 L11 19 L12 19 L12 21 L12 21 L13 23 L13 23 L13 23 L14 22 L14 22 L14 24 L15 22 L15 23 L15 24 L16 25 L16 22 L16 22 L17 21 L17 21 L17 22 L18 22 L18 23 L18 22 L19 23 L19 24 L19 23 L20 24 L20 24 L20 23 L21 22 L21 21 L21 21 L22 21 L22 21 L22 19 L23 18 L23 19 L23 18 L24 19 L24 19 L24 18 L25 20 L25 20 L25 21 L26 20 L26 19 L26 20 L27 21 L27 20 L27 20 L28 21 L28 21 L28 21 L29 20 L29 20 L29 19 L30 18 L30 18 L30 18 L31 17 L31 16 L31 16 L32 15 L32 15 L32 15 L33 13 L33 14 L33 14 L34 15 L34 15 L34 14 L35 14 L35 14 L35 12 L36 12 L36 14 L36 14 L37 14 L37 14 L37 15 L38 16 L38 16 L38 15 L39 15 L39 15 L39 15 L40 16 L40 15 L40 15 L40 15 L41 16 L41 17 L41 18 L42 20 L42 21 L42 22 L43 24 L43 25 L43 26 L44 25 L44 29 L44 30 L45 31 L45 30 L45 30 L46 32 L46 34 L46 33 L47 31 L47 32 L47 31 L48 31 L48 31 L48 30 L49 31 L49 33 L49 35 L50 35 L50 36 L50 34 L51 32 L51 33 L51 33 L52 33 L52 31 L52 32 L53 31 L53 31 L53 31 L54 30 L54 31 L54 32 L55 33 L55 34 L55 33 L56 32 L56 31 L56 31 L57 29 L57 27 L57 27 L58 27 L58 26 L58 26 L59 26 L59 25 L59 24 L60 25 L60 25 L60 25 L61 24 L61 25 L61 26 L62 27 L62 27 L62 27 L63 26 L63 26 L63 26 L64 26 L64 26 L64 25 L65 26 L65 26 L65 26 L66 23 L66 24 L66 24 L67 25 L67 24 L67 24 L68 22 L68 22 L68 21 L69 22 L69 22 L69 23 L70 23 L70 23 L70 23 L71 23 L71 23 L71 23 L72 25 L72 25 L72 24 L73 23 L73 24 L73 23 L74 23 L74 22 L74 21 L75 22 L75 22 L75 22 L76 23 L76 23 L76 23 L77 24 L77 24 L77 24 L78 24 L78 23 L78 23 L79 23 L79 23 L79 23">
+                                    </path>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="stock_slider_item">
+                            <div class="stocker_slider_item_type">
+                                <h5>创业板指</h5>
+                            </div>
+                            <div class="stock_slider_item_info">
+                                <div class="stock_slider_item_current stock_slider_gain">3091.40</div>
+                                <div class="stock_slider_item_growth stock_slider_gain">+39.98(+1.31%)</div>
+                            </div>
+                            <div class="stock_slider_chart stock_slider_gain">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="width: 80px; height: 32.8px;">
+                                    <path class="stock_slider_last_close" d="M0 20 L80 20"></path>
+                                    <path class="stock_slider_polyline"
+                                        d="M0 20 L0 21 L0 20 L0 21 L1 19 L1 20 L1 18 L2 19 L2 19 L2 18 L3 19 L3 19 L3 19 L4 21 L4 21 L4 20 L5 18 L5 18 L5 17 L6 18 L6 18 L6 19 L7 17 L7 18 L7 17 L8 15 L8 13 L8 12 L9 13 L9 12 L9 12 L10 12 L10 12 L10 11 L11 11 L11 10 L11 10 L12 11 L12 12 L12 12 L13 13 L13 13 L13 14 L14 13 L14 12 L14 14 L15 12 L15 13 L15 13 L16 13 L16 12 L16 12 L17 10 L17 11 L17 11 L18 10 L18 11 L18 10 L19 10 L19 11 L19 10 L20 11 L20 10 L20 9 L21 9 L21 8 L21 8 L22 8 L22 8 L22 6 L23 6 L23 6 L23 6 L24 6 L24 6 L24 6 L25 7 L25 7 L25 8 L26 7 L26 7 L26 7 L27 7 L27 7 L27 7 L28 8 L28 8 L28 8 L29 7 L29 7 L29 7 L30 6 L30 6 L30 6 L31 6 L31 5 L31 5 L32 5 L32 5 L32 5 L33 4 L33 5 L33 5 L34 5 L34 5 L34 4 L35 4 L35 4 L35 3 L36 3 L36 4 L36 5 L37 4 L37 4 L37 4 L38 5 L38 4 L38 4 L39 4 L39 4 L39 4 L40 4 L40 4 L40 4 L40 3 L41 4 L41 5 L41 5 L42 6 L42 7 L42 8 L43 9 L43 10 L43 11 L44 11 L44 13 L44 13 L45 13 L45 13 L45 13 L46 14 L46 14 L46 14 L47 13 L47 13 L47 12 L48 13 L48 12 L48 12 L49 13 L49 14 L49 15 L50 15 L50 16 L50 15 L51 14 L51 14 L51 14 L52 14 L52 13 L52 13 L53 12 L53 12 L53 13 L54 12 L54 13 L54 13 L55 14 L55 14 L55 13 L56 13 L56 13 L56 12 L57 11 L57 11 L57 10 L58 10 L58 10 L58 10 L59 9 L59 9 L59 8 L60 9 L60 9 L60 9 L61 9 L61 9 L61 10 L62 10 L62 11 L62 11 L63 10 L63 10 L63 10 L64 10 L64 10 L64 10 L65 10 L65 10 L65 10 L66 9 L66 9 L66 9 L67 9 L67 9 L67 9 L68 8 L68 8 L68 7 L69 8 L69 8 L69 8 L70 8 L70 8 L70 8 L71 7 L71 7 L71 8 L72 8 L72 9 L72 9 L73 8 L73 8 L73 8 L74 7 L74 7 L74 7 L75 7 L75 7 L75 7 L76 7 L76 8 L76 8 L77 8 L77 8 L77 9 L78 8 L78 8 L78 8 L79 8 L79 8 L79 8">
+                                    </path>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="#" class="stock_slider_item">
+                            <div class="stocker_slider_item_type">
+                                <h5>科创50</h5>
+                            </div>
+                            <div class="stock_slider_item_info">
+                                <div class="stock_slider_item_current stock_slider_slip">1322.24</div>
+                                <div class="stock_slider_item_growth stock_slider_slip">-1.81(-0.14%)</div>
+                            </div>
+                            <div class="stock_slider_chart stock_slider_slip">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="width: 80px; height: 32.8px;">
+                                    <path class="stock_slider_last_close" d="M0 20 L80 20"></path>
+                                    <path class="stock_slider_polyline"
+                                        d="M0 33 L0 33 L0 31 L0 26 L1 24 L1 24 L1 26 L2 26 L2 24 L2 25 L3 27 L3 29 L3 28 L4 31 L4 34 L4 32 L5 31 L5 30 L5 32 L6 30 L6 31 L6 32 L7 28 L7 28 L7 30 L8 28 L8 26 L8 27 L9 28 L9 28 L9 31 L10 32 L10 28 L10 29 L11 29 L11 28 L11 28 L12 28 L12 30 L12 31 L13 31 L13 31 L13 31 L14 31 L14 30 L14 30 L15 31 L15 31 L15 31 L16 33 L16 31 L16 30 L17 27 L17 27 L17 27 L18 27 L18 26 L18 26 L19 26 L19 28 L19 29 L20 28 L20 27 L20 24 L21 24 L21 22 L21 23 L22 23 L22 22 L22 20 L23 18 L23 18 L23 17 L24 19 L24 19 L24 18 L25 22 L25 22 L25 22 L26 22 L26 20 L26 22 L27 22 L27 21 L27 21 L28 22 L28 22 L28 22 L29 22 L29 22 L29 21 L30 21 L30 20 L30 20 L31 20 L31 19 L31 19 L32 18 L32 17 L32 18 L33 17 L33 18 L33 18 L34 18 L34 19 L34 18 L35 17 L35 17 L35 15 L36 14 L36 15 L36 17 L37 18 L37 19 L37 19 L38 19 L38 19 L38 19 L39 19 L39 18 L39 19 L40 18 L40 17 L40 16 L40 17 L41 18 L41 19 L41 19 L42 19 L42 20 L42 22 L43 25 L43 26 L43 25 L44 26 L44 27 L44 32 L45 30 L45 31 L45 32 L46 34 L46 35 L46 34 L47 32 L47 31 L47 32 L48 30 L48 31 L48 30 L49 31 L49 31 L49 32 L50 32 L50 34 L50 35 L51 33 L51 34 L51 35 L52 36 L52 35 L52 36 L53 35 L53 33 L53 34 L54 34 L54 34 L54 34 L55 34 L55 35 L55 36 L56 35 L56 35 L56 33 L57 31 L57 31 L57 31 L58 31 L58 30 L58 30 L59 30 L59 28 L59 25 L60 26 L60 26 L60 25 L61 25 L61 24 L61 26 L62 27 L62 28 L62 28 L63 26 L63 25 L63 24 L64 25 L64 26 L64 26 L65 26 L65 25 L65 24 L66 23 L66 23 L66 24 L67 24 L67 23 L67 22 L68 21 L68 19 L68 17 L69 18 L69 19 L69 20 L70 20 L70 20 L70 18 L71 18 L71 19 L71 19 L72 21 L72 21 L72 19 L73 20 L73 19 L73 18 L74 17 L74 16 L74 16 L75 18 L75 18 L75 18 L76 20 L76 22 L76 21 L77 26 L77 23 L77 24 L78 25 L78 25 L78 24 L79 24 L79 24 L79 23">
+                                    </path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="stock_silder_pagination">
+                        <span class="stock_slider_active"></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="home_timeline">
+                    <div class="timeline_tab_2L timeline_tabs_3">
+                        <a href="#" class="timeline_tab_item tab_active">雪球热帖</a>
+                        <a href="#" class="timeline_tab_item">7×24</a>
+                    </div>
+                    <div>
+                        <div>
+                            <div class="timeline_detail_item">
+                                <a href="#" class="timeline_item_placeholder">&nbsp;</a>
+                                <h3>
+                                    <a href="#" rel="noopener noreferrer" target="_blank"></a>
+                                </h3>
+                                <p>一群人诟病10年不涨，泡沫只想说这些人是傻子，波动博弈品种，在别人手里涨完了，你进里面高接盘当阿Q，然后YY这只股票曾经涨了几倍？<img
+                                        src="./images/face/emoji_24_nose.png" title="[抠鼻]" alt="[抠鼻]" height="24">
+                                    股市真理是：X轴多长，一旦爆发后Y轴就有多高，正因为十年不涨，所以一旦开始涨你才能享受到10年的涨幅。 <a href="http://xueqiu.com/S/SH600489"
+                                        target="_blank">$中金黄金(SH600489)$</a> <a href="http://xueqiu.com/S/SZ002155"
+                                        target="_blank">$湖南黄金(SZ002155)$</a>
+                                </p>
+                                <div class="timeline_item_footer">
+                                    <div class="timeline_item_auchor">
+                                        <a href="#" class="timeline_item_avatar timeline_item_avatar_sm">
+                                            <img src="./images/avatar.jpg" alt="">
+                                        </a>
+                                        <a href="#" class="timeline_item_user_name">泡沫艺术家</a>
+                                        <span></span>
+                                        <span>05-04 19:13</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline_detail_item">
+                                <a href="#" class="timeline_item_placeholder">&nbsp;</a>
+                                <h3>
+                                    <a href="#" rel="noopener noreferrer" target="_blank">隆基为何不介入硅料环节？</a>
+                                </h3>
+                                <p><a href="http://xueqiu.com/S/SH601012" target="_blank">$隆基股份(SH601012)$</a> <a href="http://xueqiu.com/n/204tian"
+                                        target="_blank">@204tian</a> <a href="http://xueqiu.com/n/加息首季" target="_blank">@加息首季</a> <a
+                                        href="http://xueqiu.com/n/未足奇" target="_blank">@未足奇</a> <a href="http://xueqiu.com/n/糊锅巴"
+                                        target="_blank">@糊锅巴</a>
+                                    有一个疑惑，隆基现在已逐步介入光伏产业链多个环节，包括硅片、电池、组件，甚至下游BIPV、制氢，但唯独上游硅料环节没有介入，这让人有受制于人的感觉，现在明显有被卡脖子的情况。当然，投资过于分散有不利之外，但作为一个高度垂直...
+                                </p>
+                                <div class="timeline_item_footer">
+                                    <div class="timeline_item_auchor">
+                                        <a href="#" class="timeline_item_avatar timeline_item_avatar_sm">
+                                            <img src="./images/sea.jpg" alt="">
+                                        </a>
+                                        <a href="#" class="timeline_item_user_name">Sea1100</a>
+                                        <span></span>
+                                        <span>05-04 19:13</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline_detail_item">
+                                <a href="#" class="timeline_item_placeholder">&nbsp;</a>
+                                <h3>
+                                    <a href="#" rel="noopener noreferrer" target="_blank"></a>
+                                </h3>
+                                <p><a href="http://xueqiu.com/S/SZ002594" target="_blank">$比亚迪(SZ002594)$</a> 业界流传一个段子：
+                                    王传福见到玻璃大王曹德旺，一脸不开心：老曹，我打算造玻璃了。曹德旺连忙说：别别别，我马上就买一辆BYD。段子就戳在王传福的制造能力上。发动机、空调、灯具、安全带、安全气囊、倒车雷达......甚至连车间设备——整车悬挂系统，也是自己制造。一切皆是...
+                                </p>
+                                <div class="timeline_item_footer">
+                                    <div class="timeline_item_auchor">
+                                        <a href="#" class="timeline_item_avatar timeline_item_avatar_sm">
+                                            <img src="./images/fish.jpg" alt="">
+                                        </a>
+                                        <a href="#" class="timeline_item_user_name">千分之一股权</a>
+                                        <span></span>
+                                        <span>05-04 19:13</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline_detail_item">
+                                <a href="#" class="timeline_item_placeholder">&nbsp;</a>
+                                <h3>
+                                    <a href="#" rel="noopener noreferrer" target="_blank"></a>
+                                </h3>
+                                <p>今天跟领导谈了谈她二姨要我给她投资的事，我用了一个身边都能理解的例子。
+                                    如果说姜的平均价格是五块钱，而当初是三块五，那么就可以安心的买。姜可以储存的，“姜够本”。但现在姜已经五块五了，后续行情也许会不错，但不可能像三块五时那样来买了。而且，必须得有可能跌倒四块五的预期。 大多人...
+                                </p>
+                                <div class="timeline_item_footer">
+                                    <div class="timeline_item_auchor">
+                                        <a href="#" class="timeline_item_avatar timeline_item_avatar_sm">
+                                            <img src="./images/vocation.jpg" alt="">
+                                        </a>
+                                        <a href="#" class="timeline_item_user_name">北溟有鱼天海风</a>
+                                        <span></span>
+                                        <span>05-04 19:13</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timeline_detail_item">
+                                <a href="#" class="timeline_item_placeholder">&nbsp;</a>
+                                <h3>
+                                    <a href="#" rel="noopener noreferrer" target="_blank"></a>
+                                </h3>
+                                <p>一群人诟病10年不涨，泡沫只想说这些人是傻子，波动博弈品种，在别人手里涨完了，你进里面高接盘当阿Q，然后YY这只股票曾经涨了几倍？<img src="./images/face/emoji_24_nose.png"
+                                        title="[抠鼻]" alt="[抠鼻]" height="24">
+                                    股市真理是：X轴多长，一旦爆发后Y轴就有多高，正因为十年不涨，所以一旦开始涨你才能享受到10年的涨幅。 <a href="http://xueqiu.com/S/SH600489"
+                                        target="_blank">$中金黄金(SH600489)$</a> <a href="http://xueqiu.com/S/SZ002155"
+                                        target="_blank">$湖南黄金(SZ002155)$</a>
+                                </p>
+                                <div class="timeline_item_footer">
+                                    <div class="timeline_item_auchor">
+                                        <a href="#" class="timeline_item_avatar timeline_item_avatar_sm">
+                                            <img src="./images/avatar.jpg" alt="">
+                                        </a>
+                                        <a href="#" class="timeline_item_user_name">泡沫艺术家</a>
+                                        <span></span>
+                                        <span>05-04 19:13</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="timeline_more">加载更多</a>
+                        <div class="global_loading">
+                            <i class="iconfont_iconfont loading"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="home_main_right">
+                <ul class="promoAside_business">
+                    <li>
+                        <a href="#">
+                            <i class="business_sprite_danjuan"></i>
+                            <strong>蛋卷基金</strong>
+                            <span>
+                                <i class="iconfont_iconfont sidebar_more"></i>
+                            </span>
+                            <div class="business_icon_broker">
+                                <img src="./images/10percent_off.png" alt="蛋卷基金">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="business_sprite_new_account"></i>
+                            <strong>A股开户</strong>
+                            <span>
+                                万2.5低佣
+                                <i class="iconfont_iconfont sidebar_more"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="business_sprite_new_account_aboard"></i>
+                            <strong>港美股开户</strong>
+                            <span>
+                                <i class="iconfont_iconfont sidebar_more"></i>
+                            </span>
+                            <div class="business_icon_broker">
+                                <img src="./images/global_market.png" alt="港美股开户">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="business_sprite_pe"></i>
+                            <strong>私募中心</strong>
+                            <span>
+                                新品发布季
+                                <i class="iconfont_iconfont sidebar_more"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="business_sprite_icon_future"></i>
+                            <strong>期货开户</strong>
+                            <span>
+                                T+0双向杠杆交易
+                                <i class="iconfont_iconfont sidebar_more"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="hot_stock_list_container hot_stock_list_board">
+                    <h3>
+                        热股榜
+                        <a href="#" class="hot_stock_list_more">
+                            更多
+                        </a>
+                    </h3>
+                    <div class="hot_stock_list_tabs_panel">
+                        <a href="#" class="stock_list_active">全球</a>
+                        <a href="#">沪深</a>
+                        <a href="#">港股</a>
+                        <a href="#">美股</a>
+                    </div>
+                    <div class="hot_stock_sort_time">
+                        <a href="#" class="stock_list_active">1小时内最热</a>
+                        <i class="iconfont_iconfont dot"></i>
+                        <a href="#">24小时内最热</a>
+                    </div>
+                    <table class="hot_stock_list hot_stock_board_list">
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>
+                                    <a href="#">复星医药</a>
+                                </td>
+                                <td class="stock_list_gain">
+                                    <i class="iconfont_iconfont stockDown"></i>
+                                </td>
+                                <td class="stock_list_gain">9495</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>
+                                    <a href="#">中远海控</a>
+                                </td>
+                                <td class="stock_list_slip">
+                                    <i class="iconfont_iconfont stockUp"></i>
+                                </td>
+                                <td class="stock_list_slip">
+                                    7683
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>
+                                    <a href="#">复星医药</a>
+                                </td>
+                                <td class="stock_list_slip">
+                                    <i class="iconfont_iconfont stockUp"></i>
+                                </td>
+                                <td class="stock_list_slip">
+                                    5443
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>
+                                    <a href="#">中国平安</a>
+                                </td>
+                                <td class="stock_list_gain">
+                                    <i class="iconfont_iconfont stockDown"></i>
+                                </td>
+                                <td class="stock_list_gain">
+                                    5394
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>
+                                    <a href="#">紫金矿业</a>
+                                </td>
+                                <td class="stock_list_slip">
+                                    <i class="iconfont_iconfont stockUp"></i>
+                                </td>
+                                <td class="stock_list_slip">
+                                    5393
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>
+                                    <a href="#">腾讯控股</a>
+                                </td>
+                                <td class="stock_list_slip">
+                                    <i class="iconfont_iconfont stockUp"></i>
+                                </td>
+                                <td class="stock_list_slip">
+                                    4880
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>
+                                    <a href="#">中国平安</a>
+                                </td>
+                                <td class="stock_list_slip">
+                                    <i class="iconfont_iconfont stockUp"></i>
+                                </td>
+                                <td class="stock_list_slip">
+                                    3708
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>
+                                    <a href="#">紫金矿业</a>
+                                </td>
+                                <td class="stock_list_slip">
+                                    <i class="iconfont_iconfont stockUp"></i>
+                                </td>
+                                <td class="stock_list_slip">
+                                    3099
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="reportAside_info_wrap">
+                    <a href="#" class="aside_report_info">
+                        网上有害信息举报专区
+                        <i class="iconfont_iconfont report_aside_iconfont sidebar_more"></i>
+                    </a>
+                    <a href="#" class="aside_report_info">
+                        儿童色情信息投诉专区
+                        <i class="iconfont_iconfont report_aside_iconfont sidebar_more"></i>
+                    </a>
+                    <a href="#" class="aside_report_info">
+                        非法证券投资咨询活动举报专区
+                        <i class="iconfont_iconfont report_aside_iconfont sidebar_more"></i>
+                    </a>
+                    <a href="#" class="aside_report_info">
+                        违法（含侵权）及不良信息投诉指引
+                        <i class="iconfont_iconfont report_aside_iconfont sidebar_more"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- go to top -->
+        <a href="#" class="back_to_top" >
+            <i class="iconfont_iconfont goToTop"></i>
+        </a>
+
+        <!-- footer -->
+        <footer class="footer">
+            <div class="footer_container">
+                <div class="footer_hd">
+                    <div class="footer_about">
+                        <div class="footer_sprite_kh footer_sprite_tw footer_about_slogan">刷刷雪球再下单</div>
+                        <ul class="footer_about_list">
+                            <li>
+                                <a href="#" >常见问题</a>
+                            </li>
+                            <li>
+                                <a href="#">加入我们</a>
+                            </li>
+                            <li>
+                                <a href="#">关于雪球</a>
+                            </li>
+                        </ul>
+                        <div class="footer_clear">
+                        </div>
+                        <p class="footer_about_warning">
+                            风险提示：雪球里任何用户或者嘉宾的发言，都有其特定立场，投资决策需要建立在独立思考之上
+                        </p>
+                    </div>
+                    <ul class="footer_about_business">
+                        <li>
+                            <a href="#">
+                                <i class="footer_sprite_kh footer_sprite_icon_kaihu"></i>
+                                <span>A 股开户</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="footer_sprite_kh footer_sprite_icon_xueying"></i>
+                                <span>港股开户</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="footer_sprite_kh footer_sprite_icon_xueying"></i>
+                                <span>美股开户</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="footer_sprite_kh footer_sprite_icon_danjuan"></i>
+                                <span>蛋卷基金</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="footer_sprite_kh footer_sprite_icon_pe"></i>
+                                <span>私募中心</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_ft">
+                    <div class="footer_copyright">
+                        <p>
+                            互联网违法和不良信息投诉：01061840634 / tousu@xueqiu.com
+                            <a href="#">违法(含侵权)及不良信息投诉指引</a>
+                        </p>
+                        <p>
+                            <span>© 2021 XUEQIU.COM</span>
+                            <span>北京雪球信息科技有限公司</span>
+                            <a href="#">京公网安备 11010502040379号</a>
+                            <a href="#">京ICP证100666号</a>
+                            <a href="#">京ICP备10040543</a>
+                        </p>
+                        <p>
+                            <a href="#">证券业协会会员单位（代码817027）</a>
+                            <a href="#">广播电视节目制作经营许可证: (京)字第08638号</a>
+                            <a href="#">互联网药品信息服务资格证书</a>
+                            <a href="#">雪球服务协议</a>
+                            <a href="#">雪球隐私政策</a>
+                        </p>
+                    </div>
+                    <ul class="footer_social">
+                        <li>
+                            <a href="#" class="footer_social_wechat">
+                                <i class="iconfont_iconfont footer_social_color wechat"></i>
+                                <div class="footer_wechat_qrcode_dropdown_container">
+                                    <svg class="footer_triangle_1u2" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <filter id="blur" x="0" y="0">
+                                                <feGaussianBlur in="SourceAlpha" result="blur" stdDeviation="1"></feGaussianBlur>
+                                                <feOffset in="blur" dx="0" dy="0" result="offsetBlur"></feOffset>
+                                                <feFlood flood-color="#000" flood-opacity="0.32" result="offsetColor"></feFlood>
+                                                <feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"></feComposite>
+                                            </filter>
+                                        </defs>3<path d="M0 0 L 10 0 L 5 6" filter="url(#blur)"></path>
+                                        <path d="M0 0 L 10 0 L 5 6" fill="#fff"></path>
+                                    </svg>
+                                    <div class="footer_wechat_qrcode_dropdown">
+                                        <div class="footer_qrcode footer_sprite_kh footer_sprite_qrcode_wechat"></div>
+                                        <span>扫我，关注雪球微信公众号</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont_iconfont footer_social_color weibo"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="iconfont_iconfont email"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

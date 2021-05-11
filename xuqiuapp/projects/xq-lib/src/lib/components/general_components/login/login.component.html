@@ -1,0 +1,85 @@
+<div>
+    <div class="dialog_primary">
+        <div class="dialog_content">
+            <div class="dialog_animated dialog_zoom_in">
+                <div class="login_modal">
+                    <a href="javascript:void(0);" class="login_modal_close" (click)="closeLogin()">
+                        <i class="iconfont_iconfont alertclose"></i>
+                    </a>
+                    <div class="login_modal_banner"></div>
+                    <div class="login_modal_main">
+                        <div class="login_modal_main_mod">
+                            <div>
+                                <div class="modal_control">
+                                    <a href="javascript:void(0);" class="modal_control_active">验证码登录/注册</a>
+                                    <a href="javascript:void(0);">账号密码登录</a>
+                                </div>
+                                <div class="modal_form">
+                                    <div>
+                                        <form action="" class="modal_form_login" [formGroup]="loginForm" id="loginForm">
+                                            <div class="login_modal_form_group">
+                                                <span class="login_modal_form_group_addon">
+                                                    <select class="login_modal_select_nation" formControlName="areacode">
+                                                        <option value="86" selected="areacode == '86'">中国</option>
+                                                        <option value="1">美国</option>
+                                                    </select>
+                                                </span>
+                                                <input type="text" placeholder="请输入手机号" formControlName="telephone">
+                                                <span class="login_modal_form_group_addon">
+                                                    <div class="login_modal_split_line">
+                                                    </div>
+                                                    <a href="javascript:void(0);" class="login_modal_send_code" [class.login_modal_active]="!telephone.invalid" 
+                                                    *ngIf="!applyingVerifyCode" (click)="applyVerifyCode()" >发送验证码</a>
+                                                    <span class="login_modal_resend_in_60secs" *ngIf="applyingVerifyCode">
+                                                        重新发送({{count}}s)
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div class="login_modal_form_group">
+                                                <input type="text" placeholder="请输入验证码" formControlName="code">
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="login_modal_main_options">
+                            <label for="" class="login_modal_automatic">
+                                <input type="checkbox" checked form="loginForm" >
+                                下次自动登录
+                            </label>
+                        </div>
+                        <div class="login_modal_main__btn" [class.login_modal_main_btn_active]="!loginForm.invalid" (click)="login()">登 录</div>
+                        <div class="login_modal_register_terms">
+                            注册/登录 即代表同意
+                            <a href="javascript:void(0);" title="雪球服务协议">雪球服务协议</a>
+                            &
+                            <a href="javascript:void(0);" title="雪球隐私政策">雪球隐私政策</a>
+                        </div>
+                        <div class="login_modal_third_parties">
+                            <div class="login_3rd_party_title">
+                                <span>
+                                    第三方登录
+                                </span>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);" class="iconfont_iconfont wechat"></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="iconfont_iconfont qq"></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="iconfont_iconfont weibo"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dialog_placeholder"></div>
+    <div class="dialog_overlay"></div>
+</div>

@@ -1,0 +1,11 @@
+<div class="stock_slider_container {{activePoint == 0 ? 'stock_slider_container_plus': ''}}">
+    <div class="stock_slider_box">
+        <span class="stock_slider_prev" (click)="loopStockSlider(activePoint - 1)"></span>
+        <span class="stock_slider_next" (click)="loopStockSlider(activePoint + 1)"></span>
+        <lib-stock-index *ngFor="let stock of activeStocks" [stock]="stock" (stockChange)="stockChange($event)" [svgRect]="activeSvgStyle[activePoint]"></lib-stock-index>
+    </div>
+    <div class="stock_silder_pagination">
+        <span *ngFor="let pagination of activeSvgStyle; let i = index;" 
+        [class.stock_slider_active]="i === activePoint" (click)="loopStockSlider(i)"></span>
+    </div>
+</div>

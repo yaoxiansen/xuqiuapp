@@ -1,0 +1,17 @@
+<a href="javascript:void(0);" class="stock_slider_item">
+    <div class="stocker_slider_item_type">
+        <h5>{{stock.name}}</h5>
+    </div>
+    <div class="stock_slider_item_info">
+        <div class="stock_slider_item_current {{color}}">{{stock.current}}</div>
+        <div class="stock_slider_item_growth {{color}}">{{stock.chg}}({{stock.percent}}%)</div>
+    </div>
+    <div class="stock_slider_chart {{color}}">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" [style.width]="svgRect.width + 'px'" [style.height]="svgRect.height + 'px'">
+            <path class="stock_slider_last_close" [attr.d]="svg_path_last_close"></path>
+            <path class="stock_slider_polyline"
+                [attr.d]="svg_path_minute">
+            </path>
+        </svg>
+    </div>
+</a>
