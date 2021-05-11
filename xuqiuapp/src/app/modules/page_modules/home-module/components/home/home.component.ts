@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { LoadingComponent } from './../loading/loading.component';
+import { NewListComponent } from './../news/new-list/new-list.component';
+import { Component, ComponentFactoryResolver, OnInit, ViewChild } from '@angular/core';
+import { CompHostDirective } from 'src/app/directives/comp-host.directive';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild(CompHostDirective, {static: true}) appCompHost: CompHostDirective;
+
+  components: CompObj[] = [
+    {
+      component: NewListComponent,
+      title: '雪球热帖',
+      active: true
+    },
+    {
+      component: null,
+      title: '7X24',
+      active: false
+    },
+  ];
+
+  constructor(public componentFactoryResolver: ComponentFactoryResolver) { }
 
   ngOnInit(): void {
+    this.loadComponent(this.components[0]);
   }
 
+  loadComponent(comp: CompObj) {
+    console.log('MMMMMMMMM')
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(comp.component);
+    const viewContainerRef = this.appCompHost.viewContainerRef;
+    viewContainerRef.clear();
+    viewContainerRef.createComponent(componentFactory);
+    comp.active = true;
+  }
+}
+
+interface CompObj {
+  component: any;
+  title: string;
+  active: boolean;
 }

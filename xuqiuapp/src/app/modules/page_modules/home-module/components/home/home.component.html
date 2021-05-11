@@ -7,12 +7,14 @@
         <lib-stock-index-slider></lib-stock-index-slider>
         <div class="home_timeline">
             <div class="timeline_tab_2L timeline_tabs_3">
-                <a href="javascript:void(0);" class="timeline_tab_item tab_active">雪球热帖</a>
-                <a href="javascript:void(0);" class="timeline_tab_item">7×24</a>
+                <a *ngFor="let comp of components" (click)="loadComponent(comp.component)" href="javascript:void(0);" class="timeline_tab_item" [class.tab_active]="comp.active">
+                    {{comp.title}}
+                </a>
             </div>
             <div>
                 <div>
-                    <app-new-list></app-new-list>
+                    <!-- dynamic component load -->
+                    <ng-template appCompHost></ng-template>
                 </div>
                     <app-loading></app-loading>
             </div>

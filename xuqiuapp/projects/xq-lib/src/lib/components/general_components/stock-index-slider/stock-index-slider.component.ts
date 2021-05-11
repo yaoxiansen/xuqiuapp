@@ -57,7 +57,7 @@ export class StockIndexSliderComponent implements OnInit, OnDestroy {
       point = 2;
     }
     if(typeof point == 'undefined') {
-      const time = Number(moment().tz('Asia/Shanghai').format('hh'));
+      const time = Number(moment().tz('Asia/Shanghai').format('HH'));
       point = time >= 6 && time <15 ? 0 : time >= 15 && time <19 ? 1: 2;
     }
     this.activePoint = point;

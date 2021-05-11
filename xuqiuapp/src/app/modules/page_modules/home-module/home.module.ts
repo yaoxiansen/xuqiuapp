@@ -7,6 +7,7 @@ import { NewListComponent } from './components/news/new-list/new-list.component'
 import { NewsComponent } from './components/news/news/news.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { CompHostDirective } from 'src/app/directives/comp-host.directive';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     NewListComponent,
     NewsComponent,
     HomeComponent,
-    LoadingComponent
+    LoadingComponent,
+    CompHostDirective
   ],
   imports: [
     CommonModule,
