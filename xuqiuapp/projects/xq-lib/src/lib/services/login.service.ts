@@ -7,7 +7,9 @@ import { Observable, Subject, Subscription } from 'rxjs';
 })
 export class LoginService {
 
-  isLogiined: boolean = false;
+  isLogined: boolean = false;
+
+  redirectUrl: string;
 
   private subject = new Subject<any>();
 

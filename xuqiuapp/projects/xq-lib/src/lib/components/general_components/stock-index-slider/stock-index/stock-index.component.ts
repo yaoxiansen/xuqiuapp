@@ -23,6 +23,8 @@ export class StockIndexComponent implements OnInit, OnDestroy {
 
   subscriptions: Subscription[] = [];
 
+  time_out_load_svg: any;
+
   constructor(private stockService: StockService) { }
 
   ngOnInit(): void {
@@ -35,6 +37,7 @@ export class StockIndexComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    clearTimeout(this.time_out_load_svg);
     this.subscriptions.forEach(subscription => subscription.unsubscribe);
   }
 
@@ -58,10 +61,11 @@ export class StockIndexComponent implements OnInit, OnDestroy {
     );
     this.subscriptions.push(subscription);
     if(this.stock.market_status !== '休市') {
-      setTimeout(() => {
+      this.time_out_load_svg && (clearTimeout(this.time_out_load_svg));
+      this.time_out_load_svg = setTimeout(() => {
         subscription.unsubscribe();
         this.loadSvg();
-      }, 60000);
+      }, 10000);
     }
   }
 
