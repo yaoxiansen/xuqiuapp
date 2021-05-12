@@ -1,5 +1,5 @@
 <div class="timeline_detail_item">
-    <a href="/{{news.user_id}}/{{news.id}}" class="timeline_item_placeholder">&nbsp;</a>
+    <a [routerLink]="['/', news.user_id, news.id]" class="timeline_item_placeholder">&nbsp;</a>
     <h3>
         <a href="javascript:void(0);" rel="noopener noreferrer" target="_blank">
             {{news.title}}

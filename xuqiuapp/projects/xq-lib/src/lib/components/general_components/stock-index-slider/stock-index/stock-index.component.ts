@@ -1,8 +1,8 @@
-import { MinuteQuoteParam } from './../../../../interfaces/minute-quote-param';
-import { StockService } from './../../../../services/stock.service';
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Stock } from './../../../../interfaces/stock';
+import { MinuteQuoteParam } from './../../../../interfaces/minute-quote-param';
+import { StockService } from './../../../../services/stock.service';
 
 @Component({
   selector: 'lib-stock-index',

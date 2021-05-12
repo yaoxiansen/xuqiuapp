@@ -15,6 +15,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/page_modules/trade-module/trade.module').then(m => m.TradeModule)
   },
   {
+    path: ':user_id/:id',
+    loadChildren: () => import('./modules/page_modules/news-detail-module/news-detail.module').then(m => m.NewsDetailModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
