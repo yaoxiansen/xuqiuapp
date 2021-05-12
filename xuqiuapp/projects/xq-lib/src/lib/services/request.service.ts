@@ -1,3 +1,4 @@
+import { HotStockInfo } from './../interfaces/hot-stock-info';
 import { TypeAheadStock } from './../interfaces/type-ahead-stock';
 import { Config } from './../configs/config';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -48,6 +49,17 @@ export class RequestService {
     return this.httpClient.get(`${Config.host}${Config.type_ahead_query_stock}`, {params}).pipe(
         map(res => {
           return res && res['data'];
+        })
+    );
+  }
+
+  fetchHotStocks(temp): Observable<HotStockInfo[]> {
+    const params = {
+      ...temp
+    }
+    return this.httpClient.get(`${Config.host}${Config.fetch_hot_stocks}`, {params}).pipe(
+        map(res => {
+          return res && res['data'] && res['data']['items'];
         })
     );
   }

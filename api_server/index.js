@@ -112,8 +112,8 @@ app.post('/api/login', async(req, res) => {
 
 // 热股榜
 app.get('/api/index/hotStock', async (req, res) => {
-    let {index} = req.query;
-    let httpUrl = `https://stock.xueqiu.com/v5/stock/hot_stock/list.json?size=8&_type=${index}&type=${index}`
+    let {_type, type} = req.query;
+    let httpUrl = `https://stock.xueqiu.com/v5/stock/hot_stock/list.json?size=8&_type=${_type}&type=${type}`
     let result = await axios.get(httpUrl, options);
     res.json(result.data);
 })
