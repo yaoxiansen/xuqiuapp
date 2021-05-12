@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StockIndexComponent } from './components/general_components/stock-index-slider/stock-index/stock-index.component';
 import { TypeAheadComponent } from './components/general_components/type-ahead/type-ahead.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -29,6 +30,7 @@ import { TypeAheadComponent } from './components/general_components/type-ahead/t
   imports: [
     CommonModule,
     FormsModule,
+    RouterModule,
     ReactiveFormsModule,
     HttpClientModule
   ],

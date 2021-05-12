@@ -54,7 +54,7 @@ export class LiveNewsListComponent implements OnInit,OnDestroy {
 
 }
 
-class LiveNewsInfo {
+interface LiveNewsInfo {
   created_at: string;
   id: number;
   mark: number;
