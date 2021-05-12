@@ -1,8 +1,10 @@
+import { TypeAheadStock } from './../interfaces/type-ahead-stock';
 import { Config } from './../configs/config';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject, Subscription, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { TemplateParseResult } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +39,17 @@ export class RequestService {
               return items;
             })
           );
+  }
+
+  search(terms: string): Observable<TypeAheadStock[]> {
+    const params = {
+      q: terms
+    }
+    return this.httpClient.get(`${Config.host}${Config.type_ahead_query_stock}`, {params}).pipe(
+        map(res => {
+          return res && res['data'];
+        })
+    );
   }
 
   showLoadingIcon() {

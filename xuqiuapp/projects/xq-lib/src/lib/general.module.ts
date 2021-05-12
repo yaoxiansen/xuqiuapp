@@ -10,6 +10,7 @@ import { LoginComponent } from './components/general_components/login/login.comp
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { StockIndexComponent } from './components/general_components/stock-index-slider/stock-index/stock-index.component';
+import { TypeAheadComponent } from './components/general_components/type-ahead/type-ahead.component';
 
 
 
@@ -22,7 +23,8 @@ import { StockIndexComponent } from './components/general_components/stock-index
     ReportComponent,
     HotStockListComponent,
     LoginComponent,
-    StockIndexComponent
+    StockIndexComponent,
+    TypeAheadComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,8 @@ import { StockIndexComponent } from './components/general_components/stock-index
     ReportComponent,
     HotStockListComponent,
     LoginComponent,
-    StockIndexComponent
+    StockIndexComponent,
+    TypeAheadComponent
   ]
 })
 export class GeneralModule { }

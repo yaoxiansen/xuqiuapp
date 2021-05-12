@@ -1,0 +1,27 @@
+<form action="" class="header_nav_search">
+    <input type="text" autocomplete="off" #input placeholder="搜索" name="q" (input)="search(input.value)">
+    <span class="header_nav_search_addon">
+        <button type="button">
+            <i class="iconfont_iconfont"></i>
+        </button>
+    </span>
+    <div class="header_nav_search_result_container" *ngIf="stocks">
+        <div class="header_nav_search_result">
+            <div>
+                <a href="javascript:void(0);" class="header_nav_search_result_list_hd">
+                    股票
+                    <div class="header_more">
+                        <i class="iconfont_iconfont"></i>
+                    </div>
+                </a>
+                <div>
+                    <a href="javascript:void(0);" class="header_nav_search_result_list_item" *ngFor="let stock of stocks">
+                        <span>
+                            <span>{{stock.query}}({{stock.code}})</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -151,6 +151,14 @@ app.get('/api/news/query', async (req, res) => {
     res.json(result.data);
 });
 
+//股票搜索
+app.get('/api/typeahead/stock', async (req, res) => {
+    let {q} = req.query;
+    let httpUrl = `https://xueqiu.com/query/v1/suggest_stock.json?q=${q}&count=5`;
+    let result = await axios.get(httpUrl,v2Options);
+    res.json(result.data);
+});
+
 app.listen(8080, () => {
     console.log('server start', 'http://localhost:8080/');
 });
