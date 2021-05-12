@@ -6,7 +6,7 @@
         </a>
     </h3>
     <div class="hot_stock_list_tabs_panel">
-        <a href="javascript:void(0);" *ngFor="let item of hotStockTabs" [class.stock_list_active]="item.active" (click)="loadHotStocks(item.type)">全球</a>
+        <a href="javascript:void(0);" *ngFor="let item of hotStockTabs" [class.stock_list_active]="item.active" (click)="loadHotStocks(item.type)">{{item.name}}</a>
     </div>
     <div class="hot_stock_sort_time">
         <a href="javascript:void(0);" [class.stock_list_active]="hotStockSortTime === 0" (click)="sortHotStocks(0)">1小时内最热</a>
@@ -16,15 +16,15 @@
     <table class="hot_stock_list hot_stock_board_list">
         <tbody>
             <tr *ngFor="let item of stocks; let i = index;">
-                <td>{{i}}</td>
+                <td>{{i + 1}}</td>
                 <td>
                     <a href="javascript:void(0);">{{item.name}}</a>
                 </td>
                 <td [class.stock_list_gain]="item.increment > 0" [class.stock_list_slip]="item.increment < 0">
-                    <ng-container *ngIf="item.increment < 0">
+                    <ng-container *ngIf="item.increment > 0">
                         <i class="iconfont_iconfont stockDown"></i>
                     </ng-container>
-                    <ng-container *ngIf="item.increment > 0">
+                    <ng-container *ngIf="item.increment < 0">
                         <i class="iconfont_iconfont stockUp"></i>
                     </ng-container>
                 </td>

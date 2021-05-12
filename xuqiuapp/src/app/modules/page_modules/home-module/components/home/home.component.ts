@@ -1,4 +1,3 @@
-import { LoadingComponent } from './../loading/loading.component';
 import { NewListComponent } from './../news/new-list/new-list.component';
 import { Component, ComponentFactoryResolver, OnInit, ViewChild } from '@angular/core';
 import { CompHostDirective } from 'src/app/directives/comp-host.directive';
@@ -20,7 +19,7 @@ export class HomeComponent implements OnInit {
     },
     {
       component: NewListComponent, //use NewListComponent instead
-      title: '7X24',
+      title: '7×24',
       active: false
     },
   ];
