@@ -65,7 +65,7 @@ export class StockIndexComponent implements OnInit, OnDestroy {
       this.time_out_load_svg = setTimeout(() => {
         subscription.unsubscribe();
         this.loadSvg();
-      }, 10000);
+      }, 60000);
     }
   }
 

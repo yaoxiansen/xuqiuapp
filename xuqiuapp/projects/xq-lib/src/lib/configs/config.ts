@@ -1,4 +1,5 @@
 export const Config = {
+    time_zone: 'Asia/Shanghai',
     host: 'http://localhost:8080',
     send_verify_code: '/api/verifycode',
     login: '/api/login',
@@ -6,5 +7,6 @@ export const Config = {
     stock_index_minute_quote: '/api/quote/minute/chart',
     fetech_news: '/api/news/query',
     type_ahead_query_stock: '/api/typeahead/stock',
-    fetch_hot_stocks: '/api/index/hotStock'
+    fetch_hot_stocks: '/api/index/hotStock',
+    fetch_live_news: '/api/news/live'
 }

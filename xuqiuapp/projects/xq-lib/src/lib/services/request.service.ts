@@ -1,11 +1,11 @@
-import { HotStockInfo } from './../interfaces/hot-stock-info';
-import { TypeAheadStock } from './../interfaces/type-ahead-stock';
-import { Config } from './../configs/config';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject, Subscription, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { TemplateParseResult } from '@angular/compiler';
+import * as moment from 'moment-timezone';
+import { HotStockInfo } from './../interfaces/hot-stock-info';
+import { TypeAheadStock } from './../interfaces/type-ahead-stock';
+import { Config } from './../configs/config';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +40,22 @@ export class RequestService {
               return items;
             })
           );
+  }
+
+  fetchLiveNews(): Observable<any> {
+    return this.httpClient.get(`${Config.host}${Config.fetch_live_news}`)
+          .pipe(
+            map((res) => {
+              let items = res && res['items'];
+              if(items) {
+                items = items.map(item => {
+                  item['created_at'] = moment(item['created_at']).tz(Config.time_zone).format('hh:mm');
+                  return item;
+                })
+              }
+              return items;
+            })
+          )
   }
 
   search(terms: string): Observable<TypeAheadStock[]> {

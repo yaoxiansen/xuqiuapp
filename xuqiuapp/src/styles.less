@@ -1927,3 +1927,68 @@ a.timeline_item_avatar img {
   color: #ef7d6b;
 }
 /* login popup end */
+
+// live news start
+.timeline_live_hd {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #edf0f5;
+  margin: 20px 0 30px;
+  span {
+    font-size: 30px;
+    color: #f70;
+    vertical-align: -3px;
+    margin-right: 3px;
+  }
+}
+
+.timeline_live {
+  font-size: 15px;
+  line-height: 1.6;
+  tr td {
+    vertical-align: top;
+    padding: 0 0 40px;
+    &:first-child {
+      color: #33353c;
+    }
+    &:nth-child(2) {
+      position: relative;
+      .point {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        padding: 0 10px;
+        background-color: #fff;
+        &::before {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #edf0f5;
+          content: "";
+        }
+      }
+    }
+    &:nth-child(2) .line {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -2px;
+      width: 4px;
+      height: 100%;
+      background-color: #edf0f5;
+    }
+  }
+  tr.highlight td {
+    color: #f70;
+    &:nth-child(2) .point::before {
+      background-color: #f70;
+    }
+  }
+  a {
+    display: block;
+    &:hover {
+      background-color: #f9f9f9;
+      outline: 5px solid #f9f9f9;
+    }
+  }
+}

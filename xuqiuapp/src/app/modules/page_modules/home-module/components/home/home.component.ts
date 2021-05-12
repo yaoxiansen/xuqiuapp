@@ -1,6 +1,7 @@
-import { NewListComponent } from './../news/new-list/new-list.component';
 import { Component, ComponentFactoryResolver, OnInit, ViewChild } from '@angular/core';
 import { CompHostDirective } from 'src/app/directives/comp-host.directive';
+import { LiveNewsListComponent } from './../news/live-news-list/live-news-list.component';
+import { NewListComponent } from './../news/new-list/new-list.component';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit {
       active: true
     },
     {
-      component: NewListComponent, //use NewListComponent instead
+      component: LiveNewsListComponent,
       title: '7×24',
       active: false
     },

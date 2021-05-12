@@ -8,6 +8,7 @@ import { NewsComponent } from './components/news/news/news.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { CompHostDirective } from 'src/app/directives/comp-host.directive';
+import { LiveNewsListComponent } from './components/news/live-news-list/live-news-list.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CompHostDirective } from 'src/app/directives/comp-host.directive';
     NewsComponent,
     HomeComponent,
     LoadingComponent,
-    CompHostDirective
+    CompHostDirective,
+    LiveNewsListComponent
   ],
   imports: [
     CommonModule,

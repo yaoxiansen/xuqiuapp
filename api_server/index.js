@@ -151,6 +151,13 @@ app.get('/api/news/query', async (req, res) => {
     res.json(result.data);
 });
 
+//直播新闻
+app.get('/api/news/live', async (req, res) => {
+    let httpUrl = 'https://xueqiu.com/statuses/livenews/list.json?since_id=-1&max_id=-1&count=15';
+    let result = await axios.get(httpUrl,v2Options);
+    res.json(result.data);
+});
+
 //股票搜索
 app.get('/api/typeahead/stock', async (req, res) => {
     let {q} = req.query;
@@ -158,6 +165,7 @@ app.get('/api/typeahead/stock', async (req, res) => {
     let result = await axios.get(httpUrl,v2Options);
     res.json(result.data);
 });
+
 
 app.listen(8080, () => {
     console.log('server start', 'http://localhost:8080/');
