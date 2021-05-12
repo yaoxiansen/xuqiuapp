@@ -872,7 +872,7 @@ a.timeline_item_avatar img {
 /* loading */
 .timeline_more {
   cursor: pointer;
-  display: block;
+  display: none;
   width: 200px;
   margin: 0 auto 20px;
   padding: 5px 0;
@@ -883,7 +883,6 @@ a.timeline_item_avatar img {
   text-align: center;
 }
 .global_loading {
-  display: none;
   padding: 10px 0;
   font-size: 18px;
   color: #06c;

@@ -7,7 +7,7 @@
         <lib-stock-index-slider></lib-stock-index-slider>
         <div class="home_timeline">
             <div class="timeline_tab_2L timeline_tabs_3">
-                <a *ngFor="let comp of components" (click)="loadComponent(comp.component)" href="javascript:void(0);" class="timeline_tab_item" [class.tab_active]="comp.active">
+                <a *ngFor="let comp of components" (click)="loadComponent(comp)" href="javascript:void(0);" class="timeline_tab_item" [class.tab_active]="comp.active">
                     {{comp.title}}
                 </a>
             </div>

@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
       active: true
     },
     {
-      component: null,
+      component: NewListComponent, //use NewListComponent instead
       title: '7X24',
       active: false
     },
@@ -32,11 +32,11 @@ export class HomeComponent implements OnInit {
   }
 
   loadComponent(comp: CompObj) {
-    console.log('MMMMMMMMM')
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(comp.component);
     const viewContainerRef = this.appCompHost.viewContainerRef;
     viewContainerRef.clear();
     viewContainerRef.createComponent(componentFactory);
+    this.components.forEach(comp => comp.active = false);
     comp.active = true;
   }
 }

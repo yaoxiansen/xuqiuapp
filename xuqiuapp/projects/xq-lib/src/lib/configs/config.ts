@@ -3,5 +3,6 @@ export const Config = {
     send_verify_code: '/api/verifycode',
     login: '/api/login',
     stock_index_quote: '/api/index/quote',
-    stock_index_minute_quote: '/api/quote/minute/chart'
+    stock_index_minute_quote: '/api/quote/minute/chart',
+    fetech_news: '/api/news/query'
 }

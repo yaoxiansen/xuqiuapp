@@ -13,7 +13,12 @@ const routes: Routes = [
     path: 'trade',
     canActivate: [AuthGuard],
     loadChildren: () => import('./modules/page_modules/trade-module/trade.module').then(m => m.TradeModule)
-  }
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

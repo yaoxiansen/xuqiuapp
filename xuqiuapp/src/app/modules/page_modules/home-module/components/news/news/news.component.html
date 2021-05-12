@@ -1,1 +1,20 @@
-<p>news works!</p>
+<div class="timeline_detail_item">
+    <a href="/{{news.user_id}}/{{news.id}}" class="timeline_item_placeholder">&nbsp;</a>
+    <h3>
+        <a href="javascript:void(0);" rel="noopener noreferrer" target="_blank">
+            {{news.title}}
+        </a>
+    </h3>
+    <p [innerHTML]="news.description">
+    </p>
+    <div class="timeline_item_footer">
+        <div class="timeline_item_auchor">
+            <a href="javascript:void(0);" class="timeline_item_avatar timeline_item_avatar_sm">
+                <img [src]="'https://xavatar.imedao.com/' + news.profile_image_url" alt="">
+            </a>
+            <a href="javascript:void(0);" class="timeline_item_user_name">{{news.profile_name}}</a>
+            <span></span>
+            <span>{{news.time_before}}</span>
+        </div>
+    </div>
+</div>

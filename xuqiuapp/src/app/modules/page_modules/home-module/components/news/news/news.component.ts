@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { NewsInfo } from 'xq-lib';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-news',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./news.component.less']
 })
 export class NewsComponent implements OnInit {
+
+  @Input() news: NewsInfo;
 
   constructor() { }
 
