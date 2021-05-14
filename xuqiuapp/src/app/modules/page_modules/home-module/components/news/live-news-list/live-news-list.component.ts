@@ -27,7 +27,7 @@ export class LiveNewsListComponent implements OnInit,OnDestroy {
 
   dayMonth: {day: string, month: string};
 
-  liveNews: LiveNewsInfo[];
+  newsList: LiveNewsInfo[];
 
   loadTimes: number = 0;
 
@@ -35,7 +35,7 @@ export class LiveNewsListComponent implements OnInit,OnDestroy {
 
   loading: boolean = false;
 
-  subscriptions: Subscription[] = [];
+  subscription: Subscription;
 
   constructor(public requestService: RequestService,
               public globalService: GlobalService) { }
@@ -46,41 +46,16 @@ export class LiveNewsListComponent implements OnInit,OnDestroy {
       day: moment(now).tz(Config.time_zone).format('DD'),
       month: this.months[moment(now).tz(Config.time_zone).format('MM')]
     }
-    this.loadLiveNews();
+    this.globalService.loadNews(this,this.requestService.fetchLiveNews(this.next_max_id.toString()));
   }
 
   ngOnDestroy(): void {
-    this.subscriptions.forEach(subscription => subscription.unsubscribe());
+    this.subscription && (this.subscription.unsubscribe());
   }
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: any) {
-      this.globalService.onScrollEvent.call(this,this.loadLiveNews.bind(this), this.loadTimes, this.loading);
-  }
-
-  loadLiveNews() {
-    this.subscriptions.forEach(subscription => subscription.unsubscribe());
-    this.subscriptions.splice(0, this.subscriptions.length);
-    const subscription = this.requestService.fetchLiveNews(this.next_max_id.toString()).subscribe({
-      next: this.loadMoreLiveNews.bind(this)
-    });
-    this.subscriptions.push(subscription);
-    this.requestService.showLoadingIcon();
-    this.loadTimes++;
-    this.loading = true;
-  }
-
-  loadMoreLiveNews(res) {
-    let {items, next_max_id} = res;
-    this.next_max_id = next_max_id;
-    if(!this.liveNews) {
-      this.liveNews = items;
-    }else {
-      this.liveNews = this.liveNews.concat(items);
-    }
-    this.liveNews = this.liveNews.concat(items);
-    this.requestService.hideLoadingIcon();
-    this.loading = false;
+      this.globalService.onScrollEvent.call(this,this.globalService.loadNews.bind(this.globalService, this, this.requestService.fetchLiveNews(this.next_max_id.toString())), this.loadTimes, this.loading);
   }
 
 }

@@ -16,4 +16,27 @@ export class GlobalService {
         callback();
       }
   }
+
+  loadNews(self, newsObservable$) {
+    self.subscription = newsObservable$.subscribe({
+      next: (res) => this.refineNews.call(self, self, res)
+    });
+    self.loadTimes++;
+    self.loading = true;
+    self.requestService.showLoadingIcon();
+  }
+
+  refineNews(self, res) {
+    console.log('self', self);
+    console.log('res', res);
+    let {items, next_max_id} = res;
+    if(!self.newsList) {
+      self.newsList = items;
+    }else {
+      self.newsList = self.newsList.concat(items);
+    }
+    self.next_max_id = next_max_id;
+    self.loading = false;
+    self.requestService.hideLoadingIcon();
+  }
 }

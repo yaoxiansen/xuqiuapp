@@ -18,46 +18,22 @@ export class NewListComponent implements OnInit, OnDestroy {
 
   newsList: NewsInfo[];
 
-  subscriptions: Subscription[] = [];
+  subscription: Subscription;
 
   constructor(public requestService: RequestService, public globalService: GlobalService) { }
 
   ngOnInit(): void {
-    this.loadNews();
+    this.globalService.loadNews(this, this.requestService.fetchNews(this.next_max_id.toString()));
   }
 
   ngOnDestroy(): void {
-    this.subscriptions.forEach(subscription => subscription.unsubscribe());
+    this.subscription && (this.subscription.unsubscribe())
   }
 
   @HostListener('window:scroll', ['$event'])
   onScroll(event: any) {
-      this.globalService.onScrollEvent.call(this,this.loadNews.bind(this), this.loadTimes, this.loading);
-  }
-
-
-  loadNews() {
-    this.subscriptions.forEach(subscription => subscription.unsubscribe());
-    this.subscriptions.splice(0, this.subscriptions.length);
-    const subscription = this.requestService.fetchNews(String(this.next_max_id)).subscribe({
-      next: this.refineNews.bind(this)
-    });
-    this.subscriptions.push(subscription);
-    this.requestService.showLoadingIcon();
-    this.loadTimes++;
-    this.loading = true;
-  }
-
-  refineNews(res) {
-    let {items, next_max_id} = res;
-    if(!this.newsList) {
-      this.newsList = items;
-    }else {
-      this.newsList = this.newsList.concat(items);
-    }
-    this.next_max_id = next_max_id;
-    this.requestService.hideLoadingIcon();
-    this.loading = false;
+      this.globalService.onScrollEvent.call(this,this.globalService.loadNews.bind(this.globalService,this,
+        (this.requestService.fetchNews(this.next_max_id.toString()))), this.loadTimes, this.loading);
   }
 
 }
