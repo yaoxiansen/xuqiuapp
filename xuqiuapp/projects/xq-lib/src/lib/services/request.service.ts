@@ -24,11 +24,11 @@ export class RequestService {
     return this.httpClient.post(`${Config.host}${Config.login}`, data).subscribe();
   }
 
-  fetchNews(): Observable<any> {
-    return this.httpClient.get(`${Config.host}${Config.fetech_news}`)
+  fetchNews(next_max_id: string): Observable<any> {
+    return this.httpClient.get(`${Config.host}${Config.fetech_news}`, {params: {next_max_id}})
           .pipe(
-            map((res) => {
-              let items = res['items'];
+            map((res: any) => {
+              let {items, next_max_id} = res;
               if(items) {
                 items = items.map(item => {
                     let origin = item['original_status'];
@@ -37,23 +37,26 @@ export class RequestService {
                     return {id, user_id, title, description, profile_image_url, profile_name, time_before};
                 })
               }
-              return items;
+              return {items, next_max_id};
             })
           );
   }
 
-  fetchLiveNews(): Observable<any> {
-    return this.httpClient.get(`${Config.host}${Config.fetch_live_news}`)
+  fetchLiveNews(next_max_id: string): Observable<any> {
+    return this.httpClient.get(`${Config.host}${Config.fetch_live_news}`, {params: {next_max_id}})
           .pipe(
-            map((res) => {
-              let items = res && res['items'];
+            map((res: any) => {
+              if(!res) {
+                return null;
+              }
+              let {items, next_max_id} = res;
               if(items) {
                 items = items.map(item => {
                   item['created_at'] = moment(item['created_at']).tz(Config.time_zone).format('hh:mm');
                   return item;
                 })
               }
-              return items;
+              return {items, next_max_id};
             })
           )
   }

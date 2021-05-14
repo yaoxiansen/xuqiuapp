@@ -3,7 +3,6 @@
  */
 
 export * from './lib/general.module';
-export * from './lib/services/login.service';
 export * from './lib/configs/config';
-export * from './lib/services/request.service';
 export * from './lib/interfaces/news-info';
+export * from './lib/services/index';

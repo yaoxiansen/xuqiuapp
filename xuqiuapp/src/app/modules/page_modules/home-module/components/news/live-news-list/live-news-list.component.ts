@@ -1,5 +1,5 @@
-import { Config, RequestService } from 'xq-lib';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Config, RequestService, GlobalService } from 'xq-lib';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import * as moment from 'moment-timezone';
 import { Subscription } from 'rxjs';
 
@@ -29,9 +29,16 @@ export class LiveNewsListComponent implements OnInit,OnDestroy {
 
   liveNews: LiveNewsInfo[];
 
+  loadTimes: number = 0;
+
+  next_max_id: number = -1;
+
+  loading: boolean = false;
+
   subscriptions: Subscription[] = [];
 
-  constructor(public requestService: RequestService) { }
+  constructor(public requestService: RequestService,
+              public globalService: GlobalService) { }
 
   ngOnInit(): void {
     const now = Date.now();
@@ -46,10 +53,34 @@ export class LiveNewsListComponent implements OnInit,OnDestroy {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: any) {
+      this.globalService.onScrollEvent.call(this,this.loadLiveNews.bind(this), this.loadTimes, this.loading);
+  }
+
   loadLiveNews() {
-    this.requestService.fetchLiveNews().subscribe({
-      next: (res) => {this.liveNews = res}
-    })
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
+    this.subscriptions.splice(0, this.subscriptions.length);
+    const subscription = this.requestService.fetchLiveNews(this.next_max_id.toString()).subscribe({
+      next: this.loadMoreLiveNews.bind(this)
+    });
+    this.subscriptions.push(subscription);
+    this.requestService.showLoadingIcon();
+    this.loadTimes++;
+    this.loading = true;
+  }
+
+  loadMoreLiveNews(res) {
+    let {items, next_max_id} = res;
+    this.next_max_id = next_max_id;
+    if(!this.liveNews) {
+      this.liveNews = items;
+    }else {
+      this.liveNews = this.liveNews.concat(items);
+    }
+    this.liveNews = this.liveNews.concat(items);
+    this.requestService.hideLoadingIcon();
+    this.loading = false;
   }
 
 }

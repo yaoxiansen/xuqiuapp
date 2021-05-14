@@ -146,14 +146,16 @@ app.get('/api/quote/minute/chart', async (req, res) => {
 
 //股票新闻
 app.get('/api/news/query', async (req, res) => {
-    let httpUrl = 'https://xueqiu.com/statuses/hot/listV2.json?since_id=-1&max_id=-1&size=15';
+    const {next_max_id} = req.query;
+    let httpUrl = `https://xueqiu.com/statuses/hot/listV2.json?since_id=-1&max_id=${next_max_id}&size=15`;
     let result = await axios.get(httpUrl,v2Options);
     res.json(result.data);
 });
 
 //直播新闻
 app.get('/api/news/live', async (req, res) => {
-    let httpUrl = 'https://xueqiu.com/statuses/livenews/list.json?since_id=-1&max_id=-1&count=15';
+    let {next_max_id} = req.query;
+    let httpUrl = `https://xueqiu.com/statuses/livenews/list.json?since_id=-1&max_id=${next_max_id}&count=15`;
     let result = await axios.get(httpUrl,v2Options);
     res.json(result.data);
 });

@@ -1,5 +1,5 @@
 export const Config = {
-    time_zone: 'Asia/Shanghai',
+    time_zone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     host: 'http://localhost:8080',
     send_verify_code: '/api/verifycode',
     login: '/api/login',
